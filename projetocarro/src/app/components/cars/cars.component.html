@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-10 offset-md-1 bg-body-secondary">
-      <h3>Carros Cadastrados:</h3>
+    <div class="col-md-10 offset-md-1 bg-body-secondary p-4 rounded">
+      <h3 class="mt-4">Carros Cadastrados:</h3>
       <table class="table">
         <thead>
           <tr>
@@ -10,7 +10,7 @@
             <th scope="col">Montadora</th>
             <th scope="col">Preço</th>
             <th scope="col">Ano</th>
-            <th scope="col">Opções</th>
+            <th scope="col" class="text-end">Opções</th>
           </tr>
         </thead>
         <tbody class="table-group-divider">
@@ -20,7 +20,11 @@
             <td>Fiat</td>
             <td>300000</td>
             <td>20000</td>
-            <td>mdo</td>
+            <td class="text-end">
+              <button type="button" class="btn btn-success me-2">Alterar</button>
+                
+              <button type="button" class="btn btn-danger">Remover</button>
+            </td>
           </tr>
         </tbody>
       </table>
