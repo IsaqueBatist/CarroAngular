@@ -14,6 +14,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './cars.component.css'
 })
 export class CarsComponent {
+
+  car: ICar = {}
+  idCount: number = 1
   cars: ICar[] = [
     {
       id: 1,
@@ -37,4 +40,11 @@ export class CarsComponent {
       year: 2000
     }
   ]
+
+  saveCar(){
+    this.car.id = this.idCount
+    this.cars.push(this.car)
+    this.idCount++
+    this.car = {}
+  }
 }
