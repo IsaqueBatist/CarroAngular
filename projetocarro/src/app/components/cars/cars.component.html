@@ -19,12 +19,12 @@
             <th scope="row">{{car.id}}</th>
             <td>{{car.name}}</td>
             <td>{{car.montadora}}</td>
-            <td>{{car.price}}</td>
+            <td>R$ {{car.price}}k</td>
             <td>{{car.year}}</td>
             <td class="text-end">
-              <button type="button" class="btn btn-success me-2">Alterar</button>
+              <button type="button" class="btn btn-success me-2" (click)="editbutton(car)">Alterar</button>
                 
-              <button type="button" class="btn btn-danger">Remover</button>
+              <button type="button" class="btn btn-danger" (click)="deletebutton(car)" >Remover</button>
             </td>
           </tr>
         </tbody>

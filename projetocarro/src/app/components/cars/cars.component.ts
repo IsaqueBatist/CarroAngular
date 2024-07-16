@@ -16,35 +16,61 @@ import { CommonModule } from '@angular/common';
 export class CarsComponent {
 
   car: ICar = {}
-  idCount: number = 1
+  idCount: number = 6
+  isEdited: boolean = false
   cars: ICar[] = [
     {
       id: 1,
-      name: "Isaque",
-      montadora: 'aquela',
-      price: 1223,
-      year: 2000
+      name: "Toyota Corolla",
+      montadora: 'Toyota',
+      price: 140.000,
+      year:  2024
     },
     {
       id: 2,
-      name: "Barbosa",
-      montadora: 'aquelu',
-      price: 14123,
-      year: 200044
+      name: "Honda Civic",
+      montadora: 'Honda',
+      price: 160.000,
+      year:  2024
     },
     {
       id: 3,
-      name: "Batista",
-      montadora: 'aquel',
-      price: 1223,
-      year: 2000
+      name: "Ford Mustang",
+      montadora: 'Ford',
+      price: 300.000,
+      year: 2024
+    },
+    {
+      id: 4,
+      name: "Chevrolet Onix",
+      montadora: 'Chevrolet',
+      price: 80.000,
+      year: 2024
+    },
+    {
+      id: 5,
+      name: "Volkswagen Golf",
+      montadora: 'Volkswagen',
+      price: 180.000,
+      year: 2024
     }
   ]
 
   saveCar(){
-    this.car.id = this.idCount
-    this.cars.push(this.car)
-    this.idCount++
+    if(!this.isEdited){
+      this.car.id = this.idCount
+      this.cars.push(this.car)
+      this.idCount++
+    }
     this.car = {}
+    this.isEdited = false
+  }
+
+  editbutton(car:ICar){
+    this.car = car
+    this.isEdited = true
+  }
+  deletebutton(cartoRemove:ICar){
+    this.cars = this.cars.filter((car) => car.id !== cartoRemove.id)
   }
 }
